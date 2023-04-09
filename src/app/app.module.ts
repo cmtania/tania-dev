@@ -4,11 +4,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoaderComponent } from '../shared/css-loader/loader.component';
+import { HeaderComponent } from '../features/header/header.component';
+import { HomeComponent } from '../features/home/home.component';
+import { MainComponent } from '../features/main/main.component';
+import { ExperienceComponent } from '../features/experience/experience.component';
+import { CertificationComponent } from '../features/certification/certification.component';
+import { ProjectComponent } from '../features/project/project.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoaderComponent
+    LoaderComponent,
+    MainComponent,
+    HeaderComponent,
+    HomeComponent,
+    ExperienceComponent,
+    CertificationComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
