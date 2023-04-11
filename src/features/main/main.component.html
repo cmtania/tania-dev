@@ -1,10 +1,13 @@
-<div class="container">
-    <div>
-        <header></header>
+<div class="container" >
+    <div class="nav-bar">
+        <header (clickHeader)="goToPage($event)"></header>
     </div>
-   
-    <home></home>
-    <experience></experience>
+    <div #divhome>
+        <home></home>
+    </div>
+    <div #divexperience>
+        <experience [isExpClick]="isExpClick"></experience>
+    </div>
     <certification></certification>
     <project></project>
 </div>

@@ -3,3 +3,23 @@
     color: #2b482d;
     background-color: #cbeece;
 }
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffff;
+    z-index: 99;
+  }
+
+  .dev {
+    border-color: #cbeece;
+    background-color: #cbeece;
+    border-radius: 10px;
+  }
+
+//   position:fixed;
+//     top:0px;
+//     bottom:0px;
+//     left:0px;   
+//     width:20%; 

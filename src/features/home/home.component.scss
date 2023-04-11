@@ -1,4 +1,65 @@
+.home {
+    padding-top: 100px;
+}
+
 .btn-about {
     color: #2b482d;
     background-color: #cbeece;
 }
+
+img {
+    min-width: 400px;
+    min-height: 400px;
+    border-radius: 5%;
+}
+
+.img-container {
+    display: flex;
+    justify-content: center;
+}
+
+:host h1{
+    font-size: 55px;
+}
+
+.slide-left {
+    position: relative;
+    animation-name: slide-left;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards; 
+    opacity: 0;
+}
+
+@keyframes slide-left {
+    0% {
+      left: -100%;
+      opacity: 0; 
+    }
+    100% {
+      left: 0;
+      opacity: 1;
+    }
+  }
+
+.slide-top{
+    position: relative;
+    animation-name: slide-top;
+    animation-duration: 1s;
+    animation-delay: 2.5s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards; 
+    opacity: 0; 
+}
+
+@keyframes slide-top {
+    0% {
+      top: -100%;
+      opacity: 0; 
+    }
+    100% {
+      top: 0;
+      opacity: 1; 
+    }
+  }
