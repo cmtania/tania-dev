@@ -9,6 +9,9 @@ export class MainComponent implements OnInit {
 
   @ViewChild('divexperience') divexperience: any;
   @ViewChild('divhome') divhome: any;
+  @ViewChild('divcert') divcert: any;
+  @ViewChild('divabout') divabout: any;
+
   isExpClick: boolean = false;
   
   ngOnInit(): void {
@@ -31,7 +34,7 @@ export class MainComponent implements OnInit {
         this.divhome.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
         break;
       case 2:
-        //this.divhome.nativeElement.scrollIntoView({ behavior: 'smooth' });
+        this.divabout.nativeElement.scrollIntoView({ behavior: 'smooth' });
         break;
       case 3:
           //this.divhome.nativeElement.scrollIntoView({ behavior: 'smooth' });
@@ -39,6 +42,14 @@ export class MainComponent implements OnInit {
       case 4:
         this.isExpClick = true;
         this.divexperience.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start'});
+          break;
+      case 5:
+            // this.isExpClick = true;
+            // this.divexperience.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start'});
+          break;
+      case 6:
+            // this.isExpClick = true;
+          this.divcert.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start'});
           break;
       default:
         this.divhome.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start'});

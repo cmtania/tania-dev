@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'home',
@@ -8,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   slideIn: boolean = true;
+  @Output() clickHeader = new EventEmitter<number>();
 
   ngOnInit(): void {
+  }
+
+  gotoPage(pageNav: number):void{
+    console.log(pageNav);
+    this.clickHeader.emit(pageNav);
   }
 
   onFocus() {

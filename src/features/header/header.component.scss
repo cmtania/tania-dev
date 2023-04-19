@@ -18,6 +18,15 @@
     border-radius: 10px;
   }
 
+  .a-disable{
+    pointer-events: none;
+    background-color: rgb(198, 193, 193);
+  }
+
+  .padding-right-10 {
+    padding-right: 10px;
+  }
+
 //   position:fixed;
 //     top:0px;
 //     bottom:0px;
