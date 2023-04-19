@@ -10,6 +10,7 @@ import { MainComponent } from '../features/main/main.component';
 import { ExperienceComponent } from '../features/experience/experience.component';
 import { CertificationComponent } from '../features/certification/certification.component';
 import { ProjectComponent } from '../features/project/project.component';
+import { AboutComponent } from '../features/about/about.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProjectComponent } from '../features/project/project.component';
     HomeComponent,
     ExperienceComponent,
     CertificationComponent,
-    ProjectComponent
+    ProjectComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

@@ -3,11 +3,16 @@
         <header (clickHeader)="goToPage($event)"></header>
     </div>
     <div #divhome>
-        <home></home>
+        <home (clickHeader)="goToPage($event)"></home>
     </div>
     <div #divexperience>
         <experience [isExpClick]="isExpClick"></experience>
     </div>
-    <certification></certification>
+    <div #divcert>
+        <certification></certification>
+    </div>
+    <div #divabout>
+        <about></about>
+    </div>
     <project></project>
 </div>
