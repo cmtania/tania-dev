@@ -1,3 +1,7 @@
+.about {
+  padding-top: 30px;
+}
+
 img {
   width: 300px;
   height: 300px;
@@ -8,4 +12,13 @@ h2 {
   text-align: center;
   margin-bottom: 20px;
   font-size: 36px;
+}
+
+.padding-top-100{
+  padding-top: 100px;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
 }

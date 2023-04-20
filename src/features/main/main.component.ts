@@ -13,6 +13,8 @@ export class MainComponent implements OnInit {
   @ViewChild('divabout') divabout: any;
 
   isExpClick: boolean = false;
+  isCertClick: boolean = false;
+  isAboutClick: boolean = false;
   
   ngOnInit(): void {
   }
@@ -27,13 +29,14 @@ export class MainComponent implements OnInit {
   }
 
   goToPage(event: any): void{
-    this.isExpClick = false;
+    this.resetPaddingTop();
     console.log('here at main component', event);
     switch (event) {
       case 1:
         this.divhome.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
         break;
       case 2:
+        this.isAboutClick = true;
         this.divabout.nativeElement.scrollIntoView({ behavior: 'smooth' });
         break;
       case 3:
@@ -48,12 +51,18 @@ export class MainComponent implements OnInit {
             // this.divexperience.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start'});
           break;
       case 6:
-            // this.isExpClick = true;
+          this.isCertClick = true;
           this.divcert.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start'});
           break;
       default:
         this.divhome.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start'});
         break;
     }
+  }
+
+  resetPaddingTop(): void {
+    this.isAboutClick = false;
+    this.isExpClick = false;
+    this.isCertClick = false;
   }
 }

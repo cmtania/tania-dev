@@ -8,8 +8,8 @@
 }
 
 img {
-    min-width: 400px;
-    min-height: 400px;
+    width: 400px;
+    height: 400px;
     border-radius: 5%;
 }
 
@@ -62,4 +62,29 @@ img {
       top: 0;
       opacity: 1; 
     }
+  }
+
+  @media screen and
+  (max-width: 600px) {
+    .home {
+      padding-top: 180px;
+    }
+
+    .i-am {
+      font-size: 35px !important;
+    }
+
+    .role-title {
+      font-size: 20px !important;
+    }
+
+    img {
+      width: 300px;
+      height: 300px;
+      border-radius: 5%;
+  }
+
+  .img-container {
+    padding-top: 20px;
+  }
   }

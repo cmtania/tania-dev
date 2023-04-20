@@ -1,4 +1,5 @@
-<div class="row home" (focus)="onFocus()">
+<div [ngClass]="(isAboutClick === true)?'padding-top-100':'about'">
+  <div class="row">
     <h2 class="fw-bold">About Me</h2>
     <div class="col-md-4 col-sm-4 img-container">
         <img src="assets/programmer.webp" alt="Avatar">
@@ -9,3 +10,4 @@
     </div>
     
   </div>
+</div>
