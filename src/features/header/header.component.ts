@@ -1,4 +1,4 @@
-import { Component, EventEmitter, HostListener, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'header',
@@ -11,6 +11,11 @@ export class HeaderComponent implements OnInit {
   @Output() clickHome = new EventEmitter<string>();
   @Output() clickHeader = new EventEmitter<number>();
 
+  checkvalue: boolean = false;
+
+  @ViewChild('barNav') barNav: any;
+
+  @ViewChild('ulHeader') ulHeader: any;
   headerNav: Array<string> = [
     'home','about','todo','experience','freelance'
   ]
@@ -20,24 +25,26 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  showMenu(value: boolean): void {
+    this.checkvalue = value;
+  }
+
   goToExperience(): void{
-    console.log('experience clicked');
     this.clickExperience.emit('clicked');
   }
 
   goToHome(): void{
-    console.log('clickHome clicked');
     this.clickHome.emit('clicked');
   }
 
   gotoPage(pageNav: number):void{
-    console.log(pageNav);
     this.clickHeader.emit(pageNav);
   }
 
-  @HostListener('window:scroll', ['$event']) // for window scroll events
-  onScroll(event: any) {
-    console.log('scroll');
-  }
+  // @HostListener('window:scroll', ['$event']) // for window scroll events
+  // onScroll(event: any) {
+  //   console.log('scroll');
+  // }
 }
 

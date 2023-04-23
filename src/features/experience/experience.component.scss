@@ -97,3 +97,13 @@ img {
 .font-size-50 {
   font-size: 50px;
 }
+
+@media (max-width: 920px) {
+  .bullet {
+    font-size: 0;
+  }
+
+  .exp-card{
+    text-align: center;
+  }
+}

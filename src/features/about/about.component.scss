@@ -22,3 +22,15 @@ h2 {
   display: flex;
   justify-content: center;
 }
+
+.aboutme {
+  text-align: justify;
+}
+
+@media (max-width: 920px) {
+.aboutme{
+  padding-top: 20px;
+  text-align: center;
+}
+
+}
