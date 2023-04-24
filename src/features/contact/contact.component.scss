@@ -1,0 +1,61 @@
+h2 {
+    margin-bottom: 20px;
+    font-size: 36px;
+  }
+
+.email a {
+  color: #2b482d;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active { text-decoration: none; }
+  
+img {
+  width: 40px;
+  height: 40px;
+}
+
+.a-cert {
+    color: #2b482d;
+}
+
+.button-cert {
+    background-color: #cbeece;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 180px;
+}
+
+.font-size-50 {
+    font-size: 50px;
+}
+
+.socials {
+  background-color: #cbeece;
+  border: 2px solid #2b482d;
+  border-radius: 50%;
+  color: #2b482d;
+  display: inline-block;
+  font-size: 14px;
+  height: 40px;
+  line-height: 2.85714;
+  position: relative;
+  text-align: center;
+  width: 40px;
+  margin: 5px;
+}
+
+.contactme {
+  text-align: right;
+
+}
+
+@media (max-width: 920px) {
+  .contactme {
+    text-align: left;
+  }
+
+}

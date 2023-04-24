@@ -14,6 +14,8 @@ import { AboutComponent } from '../features/about/about.component';
 import { SkillsComponent } from '../features/skills/skills.component';
 import { FreelanceComponent } from '../features/freelance/freelance.component';
 import { FooterComponent } from '../features/footer/footer.component';
+import { ContactComponent } from '../features/contact/contact.component';
+import { ToDoComponent } from '../features/todo/todo.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { FooterComponent } from '../features/footer/footer.component';
     AboutComponent,
     SkillsComponent,
     FreelanceComponent,
+    ContactComponent,
+    ToDoComponent,
     FooterComponent
   ],
   imports: [

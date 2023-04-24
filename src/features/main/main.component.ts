@@ -13,12 +13,14 @@ export class MainComponent implements OnInit {
   @ViewChild('divabout') divabout: any;
   @ViewChild('divskills') divskills: any;
   @ViewChild('divfreelance') divfreelance: any;
+  @ViewChild('divtodo') divtodo: any;
   
   isExpClick: boolean = false;
   isCertClick: boolean = false;
   isAboutClick: boolean = false;
   isSkillsClick: boolean = false;
   isFreelanceClick: boolean = false;
+  isToDoClick: boolean = false;
 
   ngOnInit(): void {
   }
@@ -44,7 +46,8 @@ export class MainComponent implements OnInit {
         this.divabout.nativeElement.scrollIntoView({ behavior: 'smooth' });
         break;
       case 3:
-          //this.divhome.nativeElement.scrollIntoView({ behavior: 'smooth' });
+        this.isToDoClick = true;
+        this.divtodo.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start'});
           break;
       case 4:
         this.isExpClick = true;
@@ -74,5 +77,6 @@ export class MainComponent implements OnInit {
     this.isCertClick = false;
     this.isFreelanceClick = false;
     this.isSkillsClick = false;
+    this.isToDoClick = false;
   }
 }
