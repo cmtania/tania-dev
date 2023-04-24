@@ -1,0 +1,54 @@
+.freelance {
+    padding-top: 30px;
+  }
+  
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 36px;
+  }
+
+.padding-top-100{
+    padding-top: 100px;
+}
+
+img {
+  width: 40px;
+  height: 40px;
+}
+
+.bullet {
+  font-size: 10px;
+  width: 20px;
+}
+
+.detail {
+  width: 500px;
+}
+
+
+.circle {
+  font-size: 10px;
+}
+
+.dates {
+  font-size: 12px;
+}
+.details {
+  margin-left: 21px;
+  font-size: 14px;
+}
+
+.font-size-50 {
+  font-size: 50px;
+}
+
+@media (max-width: 920px) {
+  .bullet {
+    font-size: 0;
+  }
+
+  .exp-card{
+    text-align: center;
+  }
+}
