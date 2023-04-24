@@ -8,8 +8,12 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ToDoComponent implements OnInit {
 
   @Input() isToDoClick: boolean = false;
-  certificateLink: Array<string> = ['https://courses.buri.io/view/user/certificate/c725f9b0-5bed-4951-a06a-fe0b7bec730a/pdf',
-  'https://courses.buri.io/view/user/certificate/10be5a5d-8d80-459d-a353-190e255f54ce/pdf'];
+  githubLink: Array<string> = ['https://github.com/cmtania/tania-dev',
+  'https://github.com/cmtania/portfolio-vscodetheme',
+  'https://github.com/cmtania/NodeJs-CreateDatabase','https://github.com/cmtania/BallGuessCup'];
+
+  liveLink: Array<string> = ['https://cmtania.github.io/portfolio-vscodetheme/main','https://securranty-development.azurewebsites.net/Education.aspx',
+  'https://securranty-development.azurewebsites.net//Student-Device-Insurance-Repairs.aspx'];
   
   ngOnInit(): void {
   }

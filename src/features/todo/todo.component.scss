@@ -18,14 +18,31 @@ img {
     color: #2b482d;
 }
 
+.live {
+  color: #2b482d;
+}
+
 .button-cert {
     background-color: #cbeece;
     border: none;
     border-radius: 5px;
     height: 40px;
-    width: 180px;
+    width: 160px;
+}
+
+.button-live{
+  background-color: #cbeece;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    width: 90px;
+    margin-left: 10px;
 }
 
 .font-size-50 {
     font-size: 50px;
+}
+
+.action {
+  text-align: center;
 }
