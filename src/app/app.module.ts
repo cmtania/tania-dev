@@ -16,6 +16,7 @@ import { FreelanceComponent } from '../features/freelance/freelance.component';
 import { FooterComponent } from '../features/footer/footer.component';
 import { ContactComponent } from '../features/contact/contact.component';
 import { ToDoComponent } from '../features/todo/todo.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ToDoComponent } from '../features/todo/todo.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    BrowserAnimationsModule,
+    AppRoutingModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { GetSkill, SkillModel } from '../../model/skills.model';
 
 @Component({
   selector: 'skills',
@@ -8,9 +9,14 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SkillsComponent implements OnInit {
 
   @Input() isSkillsClick: boolean = false;
-  certificateLink: Array<string> = ['https://courses.buri.io/view/user/certificate/c725f9b0-5bed-4951-a06a-fe0b7bec730a/pdf',
-  'https://courses.buri.io/view/user/certificate/10be5a5d-8d80-459d-a353-190e255f54ce/pdf'];
+  @Input() tooltip: string = '';
+
+  getSkill = new GetSkill();
+  skillList: Array<SkillModel> = [];
+
+  sample: string = 'testttt';
   
   ngOnInit(): void {
+    this.skillList = this.getSkill.getList();
   }
 }

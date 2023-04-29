@@ -1,7 +1,12 @@
 <div [ngClass]="(isSkillsClick === true)?'padding-top-100':'padding-top-30'">
     <h2 class="fw-bold">Skill Stacks</h2>    
     <div class="row skill-row">
-        <div class="logo-box" data-tooltip="C#">
+        <!-- <ng-container *ngFor="let item of skillList">
+            <div class="logo-box" data-tooltip="{{sample}}">
+                <img src="assets/logo/csharp.svg" alt="Avatar">
+            </div>
+        </ng-container> -->
+        <div class="logo-box" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
             <img src="assets/logo/csharp.svg" alt="Avatar">
         </div>
         <div class="logo-box" data-tooltip="JavaScript">
@@ -38,18 +43,4 @@
             <img src="assets/logo/bootstrap.svg" alt="Avatar">
         </div>
     </div>
-    <!-- <div class="row skill-row">
-        <div class="col-md-2 col-sm-2 logo-box">
-            <img src="assets/logo/aws.svg" alt="Avatar">
-        </div>
-        <div class="col-md-2 col-sm-2 logo-box">
-            <img src="assets/logo/aws.svg" alt="Avatar">
-        </div>
-        <div class="col-md-2 col-sm-2 logo-box">
-            <img src="assets/logo/aws.svg" alt="Avatar">
-        </div>
-        <div class="col-md-2 col-sm-2 logo-box">
-            <img src="assets/logo/aws.svg" alt="Avatar">
-        </div>
-    </div> -->
 </div>
