@@ -1,17 +1,16 @@
 <div [ngClass]="(isFreelanceClick === true)?'padding-top-100':'freelance'">
     <h2 class="fw-bold">Freelance Work</h2>    
     <div class="row">
-        <div class="col-md-6">
-            <div class="card p-2 mb-1">
-                <div>
+        <div class="col-md-6" *ngFor="let item of freelanceList">
+                <div class="card p-2 mb-1">
                     <div class="d-flex justify-content-between">
                         <div class="d-flex flex-row">
                             <div class="icon">
                                 <i class="fas fa-question-circle font-size-50"></i>
                             </div>
                             <div class="ms-2">
-                                <h5 class="mb-0 fw-bold">Inventory System, OnlineJobs.PH</h5>
-                                <h6 class="mb-0">3 months</h6>
+                                <h5 class="mb-0 fw-bold">{{item.Project}} | {{item.Company}}</h5>
+                                <h6 class="mb-0">{{item.LengthExperience}}</h6>
                             </div>
                         </div>
                     </div>
@@ -19,52 +18,17 @@
                     <div class="row work-body">
                         <div class="row exp-card">
                             <div class="detail">
-                                <h6 class="heading fw-bold mb-0">Front End Developer</h6>
-                                <span class="mb-0 dates">June 2022 - August 2022</span>
+                                <h6 class="heading fw-bold mb-0">{{item.JobTitle}}</h6>
+                                <span class="mb-0 dates">{{item.Duration}}</span>
                             </div>
                         </div>
                        <div class="row exp-card">
                         <div class="col-md-12 details">
-                            <span>• Creates transaction page with CRUD functionality and implements the corresponding
-                                API per transaction.</span><br/>
+                            <span *ngFor="let data of item.Task">• {{data}}</span><br/>
                         </div>
                        </div>
                     </div>
-                </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="card p-2 mb-1">
-                <div>
-                    <div class="d-flex justify-content-between" >
-                        <div class="d-flex flex-row">
-                            <div class="icon">
-                                 <i class="fas fa-question-circle font-size-50"></i>
-                            </div>
-                            <div class="ms-2">
-                                <h5 class="mb-0 fw-bold">Insurance System, UPWORK</h5>
-                                <h6 class="mb-0">6 months</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <hr />
-                    <div class="row work-body">
-                        <div class="row exp-card">
-                            <div class="detail">
-                                <h6 class="heading fw-bold mb-0">ASP.NET FULL STACK DEVELOPER</h6>
-                                <span class="mb-0 dates">September 2021 - March 2022</span>
-                            </div>
-                        </div>
-                       <div class="row exp-card">
-                        <div class="col-md-12 details">
-                            <span>• Fixing issues on the system, enhance/modified user interface, create html email
-                                template, and optimize per page that retrieving data from database.</span>
-                        </div>
-                       </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
     </div>
 </div>

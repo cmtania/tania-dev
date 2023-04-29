@@ -58,10 +58,6 @@ html, body {
     font-size: 14px;
     font-weight: bold;
     background-color: #cbeece;
-    // background-image: linear-gradient(30deg,
-    //   rgba(59, 72, 80, 0.44),
-    //   rgba(59, 68, 75, 0.44),
-    //   rgba(60, 82, 88, 0.44));
     box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.2);
     color: #2b482d;
     text-align: center;
@@ -69,8 +65,6 @@ html, body {
     transform: translate(-50%,  calc(0px - var(--arrow-size))) scale(0.5);
   }
   
-  // color: #2b482d;
-  // background-color: #cbeece;
   /* Tooltip arrow */
   [data-tooltip]:after {
     content: '';
