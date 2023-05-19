@@ -1,0 +1,12 @@
+<div>
+    <h2 class="fw-bold">My Resume  <button type="button" (click)="downloadResume()" class="btn btn-download fw-bold me-2">Download</button></h2>    
+    <div class="row">
+       
+        <pdf-viewer [src]="pdfSrc"
+              [render-text]="true"
+              [original-size]="true"
+              [fit-to-page]="true"
+              style="width: 400rem; height: 100rem;">
+            </pdf-viewer>
+    </div>
+</div>

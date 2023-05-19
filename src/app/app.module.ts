@@ -17,6 +17,8 @@ import { FooterComponent } from '../features/footer/footer.component';
 import { ContactComponent } from '../features/contact/contact.component';
 import { ToDoComponent } from '../features/todo/todo.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ResumeComponent } from '../features/resume/resume.component';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 @NgModule({
   declarations: [
@@ -33,12 +35,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FreelanceComponent,
     ContactComponent,
     ToDoComponent,
-    FooterComponent
+    FooterComponent,
+    ResumeComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule  
+    AppRoutingModule,
+    PdfViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

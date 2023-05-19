@@ -1,4 +1,5 @@
 import { Component, EventEmitter, HostListener, OnInit, Output, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'header',
@@ -6,6 +7,9 @@ import { Component, EventEmitter, HostListener, OnInit, Output, ViewChild } from
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
+
+  constructor(private router: Router){
+  }
 
   @Output() clickExperience = new EventEmitter<string>();
   @Output() clickHome = new EventEmitter<string>();
@@ -19,8 +23,6 @@ export class HeaderComponent implements OnInit {
   headerNav: Array<string> = [
     'home','about','todo','experience','freelance'
   ]
-
-  resumeLink: string = 'https://cmtania.github.io/resume/';
 
   ngOnInit(): void {
   }
@@ -42,9 +44,11 @@ export class HeaderComponent implements OnInit {
     this.clickHeader.emit(pageNav);
   }
 
-  // @HostListener('window:scroll', ['$event']) // for window scroll events
-  // onScroll(event: any) {
-  //   console.log('scroll');
-  // }
+  goToResume() {
+    const url = this.router.serializeUrl(
+      this.router.createUrlTree([`/resume/`])
+    );
+    window.open(url, '_blank');
+  }
 }
 
