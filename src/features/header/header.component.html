@@ -1,19 +1,4 @@
     <div class="container sticky border-bottom">
-        <!-- <nav class="d-flex flex-wrap justify-content-center mt-3 mb-1">
-          <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-            <p class="fw-bold fs-2">_tania</p>
-            <p class="fw-bold fs-2 main-text-color dev">dev</p>
-          </a>
-    
-          <ul class="nav nav-pills">
-            <li class="nav-item fw-bold"><a href="javascript:void(0)" class="nav-link text-dark" aria-label="home" (click)="gotoPage(1)">Home</a></li>
-            <li class="nav-item fw-bold"><a href="javascript:void(0)" class="nav-link text-dark" (click)="gotoPage(2)" >About</a></li>
-            <li class="nav-item fw-bold padding-right-10"><a href="javascript:void(0)" class="nav-link text-dark a-disable">ToDo</a></li>
-            <li class="nav-item fw-bold"><a href="javascript:void(0)" class="nav-link text-dark" (click)="gotoPage(4)">Experience</a></li>
-            <li class="nav-item fw-bold padding-right-10" ><a href="javascript:void(0)" class="nav-link text-dark a-disable">Freelance</a></li>
-            <li class="nav-item fw-bold"><a href="{{resumeLink}}" target="_blank" class="nav-link a-resume">Resume</a></li>
-          </ul>
-        </nav> -->
         <nav>
           <div class="logo">
             <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
@@ -21,7 +6,6 @@
               <p class="fw-bold fs-2 main-text-color dev">dev</p>
             </a>
           </div>
-          <!-- <input type="checkbox" id="click"> -->
           <input type="checkbox" #barNav id="barNav"  [checked]="checkvalue" (change)="showMenu(barNav.checked)" />
           <label for="barNav" class="menu-btn">
             <i class="fas fa-bars"></i>

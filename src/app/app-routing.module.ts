@@ -6,6 +6,7 @@ import { ResumeComponent } from '../features/resume/resume.component';
 const routes: Routes = [
   { path: 'main', component: MainComponent },
   { path: 'resume', component: ResumeComponent },
+  { path: 'tania-dev/resume', component: ResumeComponent },
   { path: '', redirectTo: '/main', pathMatch: 'full'},
   { path: 'main/main', redirectTo: '/main', pathMatch: 'full'},
   { path: '**', redirectTo: '/main', pathMatch: 'full'},
