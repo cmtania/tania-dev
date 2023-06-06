@@ -46,7 +46,7 @@ export class HeaderComponent implements OnInit {
 
   goToResume() {
     const url = this.router.serializeUrl(
-      this.router.createUrlTree([`/resume/`])
+      this.router.createUrlTree([`/tania-dev/resume/`])
     );
     window.open(url, '_blank');
   }
