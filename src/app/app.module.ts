@@ -19,6 +19,11 @@ import { ToDoComponent } from '../features/todo/todo.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ResumeComponent } from '../features/resume/resume.component';
 import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { SkillState } from 'src/ngxs/state/skill.state';
+import { NgxsModule } from '@ngxs/store';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { ProfileService } from 'src/service/profile.service';
 
 @NgModule({
   declarations: [
@@ -42,9 +47,15 @@ import { PdfViewerModule } from 'ng2-pdf-viewer';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    PdfViewerModule
+    PdfViewerModule,
+    NgxsModule.forRoot([SkillState], {
+      developmentMode: true,
+      selectorOptions: { suppressErrors: true}
+    }),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsLoggerPluginModule.forRoot()
   ],
-  providers: [],
+  providers: [ ProfileService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
