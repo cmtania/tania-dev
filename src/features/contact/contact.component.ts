@@ -1,4 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Select, Store } from '@ngxs/store';
+import { Observable } from 'rxjs';
+import { SkillModel } from 'src/model/skills.model';
+import { GetSkills } from 'src/ngxs/action/skill.action';
+import { ISkillStateModel, SkillState } from 'src/ngxs/state/skill.state';
 
 @Component({
   selector: 'contact',
@@ -16,6 +21,12 @@ export class ContactComponent implements OnInit {
     Github: 'https://github.com/cmtania',
     Instagram: 'https://www.instagram.com/_xtiantaniaaaa/',
    };
+
+  
+
+   skillData: SkillModel[] = []
+
   ngOnInit(): void {
   }
+
 }

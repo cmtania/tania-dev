@@ -6,7 +6,7 @@ export class SkillModel {
 
 export class GetSkill {
 
-    skillList: Array<SkillModel> = [
+    static skillList: Array<SkillModel> = [
     {
         Title: 'C#',
         SourceImage: 'assets/logo/csharp.svg'
@@ -57,7 +57,7 @@ export class GetSkill {
     }
     ];
     
-    getList(): Array<SkillModel> {
+    static getList(): Array<SkillModel> {
         return this.skillList;
     }
 }

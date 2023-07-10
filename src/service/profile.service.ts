@@ -10,6 +10,6 @@ import { Observable, of } from "rxjs";
 export class ProfileService{
 
     getSkills(): Observable<any> {
-        return of(GetSkill.getList())
+        return of(GetSkill.getList());
     }
 }

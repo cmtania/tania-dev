@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { GetSkill, SkillModel } from '../../model/skills.model';
+import { Observable } from 'rxjs';
+import { Store } from '@ngxs/store';
+import { GetSkills } from 'src/ngxs/action/skill.action';
 
 @Component({
   selector: 'skills',
@@ -11,12 +14,13 @@ export class SkillsComponent implements OnInit {
   @Input() isSkillsClick: boolean = false;
   @Input() tooltip: string = '';
 
-  getSkill = new GetSkill();
-  skillList: Array<SkillModel> = [];
+  skills$: Observable<SkillModel[]>;
 
-  sample: string = 'testttt';
-  
+  constructor(private store: Store){
+    this.skills$ = this.store.select(state => state.skills);
+  }
+
   ngOnInit(): void {
-    this.skillList = this.getSkill.getList();
+    this.store.dispatch(new GetSkills());
   }
 }
