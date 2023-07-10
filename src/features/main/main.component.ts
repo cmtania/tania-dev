@@ -1,4 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Store } from '@ngxs/store';
+import { GetSkills } from 'src/ngxs/action/skill.action';
 
 @Component({
   selector: 'main',
@@ -6,6 +8,8 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./main.component.scss']
 })
 export class MainComponent implements OnInit {
+
+  constructor(private store: Store){}
 
   @ViewChild('divexperience') divexperience: any;
   @ViewChild('divhome') divhome: any;
@@ -23,6 +27,7 @@ export class MainComponent implements OnInit {
   isToDoClick: boolean = false;
 
   ngOnInit(): void {
+   
   }
 
   ngAfterViewInit(): void{
