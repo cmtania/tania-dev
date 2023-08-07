@@ -1,15 +1,25 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { Store } from '@ngxs/store';
-import { GetSkills } from 'src/ngxs/action/skill.action';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Actions, Store, ofActionSuccessful } from '@ngxs/store';
+import { LinkMenuEnum } from '../../model/menu.enun';
+import { TriggerMenuButton } from 'src/ngxs/action/app.action';
+import { SubSink } from 'subsink';
 
 @Component({
   selector: 'main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent implements OnInit {
+export class MainComponent implements OnInit, OnDestroy {
 
-  constructor(private store: Store){}
+  private subs = new SubSink();
+
+  constructor(private store: Store, 
+              private action$: Actions){
+    
+    this.subs.add(
+      this.listenToTriggerMenu()
+    );
+  }
 
   @ViewChild('divexperience') divexperience: any;
   @ViewChild('divhome') divhome: any;
@@ -18,6 +28,8 @@ export class MainComponent implements OnInit {
   @ViewChild('divskills') divskills: any;
   @ViewChild('divfreelance') divfreelance: any;
   @ViewChild('divtodo') divtodo: any;
+
+  
   
   isExpClick: boolean = false;
   isCertClick: boolean = false;
@@ -27,48 +39,48 @@ export class MainComponent implements OnInit {
   isToDoClick: boolean = false;
 
   ngOnInit(): void {
-   
   }
 
   ngAfterViewInit(): void{
   }
 
-  goToExperience(event: any): void{
-    console.log('experience: here at main component');
-    console.log(this.divexperience);
-    this.divexperience.nativeElement.scrollIntoView({ behavior: 'smooth' });
+  listenToTriggerMenu(){
+    return this.action$.pipe(ofActionSuccessful(TriggerMenuButton)).subscribe((resp) => {
+      if(resp.pageNav){
+        this.goToPage(resp.pageNav);
+      };
+    })
   }
 
-  goToPage(event: any): void{
+  goToPage(pageNav: LinkMenuEnum): void{
     this.resetPaddingTop();
-    console.log('here at main component', event);
-    switch (event) {
-      case 1:
+    switch (pageNav) {
+      case LinkMenuEnum.HOME:
         this.divhome.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
         break;
-      case 2:
+      case LinkMenuEnum.ABOUT:
         this.isAboutClick = true;
         this.divabout.nativeElement.scrollIntoView({ behavior: 'smooth' });
         break;
-      case 3:
+      case LinkMenuEnum.TODO:
         this.isToDoClick = true;
         this.divtodo.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start'});
-          break;
-      case 4:
+        break;
+      case LinkMenuEnum.EXP:
         this.isExpClick = true;
         this.divexperience.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start'});
-          break;
-      case 5:
-            this.isFreelanceClick = true;
-            this.divfreelance.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start'});
-          break;
-      case 6:
-          this.isCertClick = true;
-          this.divcert.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start'});
-          break;
-      case 7:
-          this.isSkillsClick = true;
-          this.divskills.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start'});
+        break;
+      case LinkMenuEnum.FRL:
+        this.isFreelanceClick = true;
+        this.divfreelance.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start'});
+        break;
+      case LinkMenuEnum.CERT:
+        this.isCertClick = true;
+        this.divcert.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start'});
+        break;
+      case LinkMenuEnum.SKILL:
+        this.isSkillsClick = true;
+        this.divskills.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start'});
           break;
       default:
         this.divhome.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start'});
@@ -83,5 +95,9 @@ export class MainComponent implements OnInit {
     this.isFreelanceClick = false;
     this.isSkillsClick = false;
     this.isToDoClick = false;
+  }
+
+  ngOnDestroy() {
+    this.subs.unsubscribe();
   }
 }
