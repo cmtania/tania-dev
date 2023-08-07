@@ -1,4 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Store } from '@ngxs/store';
+import { TriggerMenuButton } from 'src/ngxs/action/app.action';
 
 @Component({
   selector: 'home',
@@ -7,15 +9,15 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  constructor(private store: Store){}
   slideIn: boolean = true;
   @Output() clickHeader = new EventEmitter<number>();
 
   ngOnInit(): void {
   }
 
-  gotoPage(pageNav: number):void{
-    console.log(pageNav);
-    this.clickHeader.emit(pageNav);
+  gotoPage(pageNav: number): void{
+    this.store.dispatch(new TriggerMenuButton(pageNav));
   }
 
   onFocus() {

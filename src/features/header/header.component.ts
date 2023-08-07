@@ -1,5 +1,7 @@
 import { Component, EventEmitter, HostListener, OnInit, Output, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngxs/store';
+import { TriggerMenuButton } from '../../ngxs/action/app.action';
 
 @Component({
   selector: 'header',
@@ -8,40 +10,24 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router){
+  constructor(private router: Router, private store: Store){
   }
-
-  @Output() clickExperience = new EventEmitter<string>();
-  @Output() clickHome = new EventEmitter<string>();
-  @Output() clickHeader = new EventEmitter<number>();
 
   checkvalue: boolean = false;
 
   @ViewChild('barNav') barNav: any;
 
   @ViewChild('ulHeader') ulHeader: any;
-  headerNav: Array<string> = [
-    'home','about','todo','experience','freelance'
-  ]
 
   ngOnInit(): void {
   }
-
 
   showMenu(value: boolean): void {
     this.checkvalue = value;
   }
 
-  goToExperience(): void{
-    this.clickExperience.emit('clicked');
-  }
-
-  goToHome(): void{
-    this.clickHome.emit('clicked');
-  }
-
   gotoPage(pageNav: number):void{
-    this.clickHeader.emit(pageNav);
+    this.store.dispatch(new TriggerMenuButton(pageNav));
   }
 
   goToResume() {
