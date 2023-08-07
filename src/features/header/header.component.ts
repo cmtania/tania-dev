@@ -18,9 +18,6 @@ export class HeaderComponent implements OnInit {
   @ViewChild('barNav') barNav: any;
 
   @ViewChild('ulHeader') ulHeader: any;
-  headerNav: Array<string> = [
-    'home','about','todo','experience','freelance'
-  ]
 
   ngOnInit(): void {
   }
